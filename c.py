@@ -55,8 +55,12 @@ def update(M):
     x2 = r2*np.cos(phi2)
     y2 = r2*np.sin(phi2)
     z2 = 2*np.sqrt(Rs*(r2-Rs))
-    ax.plot(x2,y2,z2)
-    #axes limits
+    planet, = ax.plot([],[],[], marker = "o", color = "cyan",markersize = 5)   
+    def animation(i):  
+        planet.set_data([x2[i]] ,[y2[i]])
+        planet.set_3d_properties([z2[i]])
+        return planet
+    ani = FuncAnimation(fig, animation, frames = 300, interval = 10)
     ax.set_xlim(-100, 100)
     ax.set_ylim(-100, 100)
     ax.set_zlim(0, 80)
