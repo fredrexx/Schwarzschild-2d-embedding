@@ -56,13 +56,6 @@ def update(M):
     ax.set_zlim(0, 80)
     if not viewer:
         ax.view_init(60,45)
-    
-    theta = np.linspace(0, np.pi, 200)
-    theta, phi =np.meshgrid(theta,phi)
-    x2 = Rs *np.sin(theta)*np.cos(phi)
-    y2 = Rs *np.sin(theta)*np.cos(theta)
-    z2 = Rs*np.cos(theta) + z
-    ax.plot_surface(x2,y2,z2)
     if show_er:
         ax.plot_surface(x, y, z, cmap="inferno")
         ax.plot_surface(x, y, -z, cmap="inferno")
