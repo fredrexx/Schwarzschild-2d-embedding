@@ -4,9 +4,9 @@ import numpy as np
 from matplotlib.animation import FuncAnimation
 
 #costanti
-G = 1
-M0 = 0.01
-c = 1
+G = 6.67*10**-11
+M0 = 2*10**30
+c = 300000000
 
 
 st.set_page_config(layout="centered")
