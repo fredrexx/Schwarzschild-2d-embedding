@@ -1,7 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.animation import FuncAnimation
+
 
 #costanti
 G = 6.67*10**-11
@@ -16,7 +16,7 @@ st.title("Schwarszchild spacetime 2d embedding")
 M = st.slider(
     "Mass (fixed)",
     min_value=float(M0),
-    max_value=20.0,
+    max_value=2*10**40,
     value=float(M0),
 )
 
@@ -50,17 +50,7 @@ def update(M):
     x = r*np.cos(phi)
     y = r*np.sin(phi)
     z = 2*np.sqrt(Rs*(r-Rs))
-    r2 = np.linspace(Rs, 100, 200)
-    phi2 = np.linspace(0, 2*np.pi, 200)
-    x2 = r2*np.cos(phi2)
-    y2 = r2*np.sin(phi2)
-    z2 = 2*np.sqrt(Rs*(r2-Rs))
-    planet, = ax.plot([],[],[], marker = "o", color = "cyan",markersize = 5)   
-    def animation(i):  
-        planet.set_data([x2[i]] ,[y2[i]])
-        planet.set_3d_properties([z2[i]])
-        return planet
-    ani = FuncAnimation(fig, animation, frames = 300, interval = 10)
+ 
     ax.set_xlim(-100, 100)
     ax.set_ylim(-100, 100)
     ax.set_zlim(0, 80)
