@@ -16,7 +16,7 @@ st.title("Schwarszchild spacetime 2d embedding")
 M = st.slider(
     "Mass (fixed)",
     min_value=float(M0),
-    max_value=20,
+    max_value=20.0,
     value=float(M0),
 )
 
