@@ -52,8 +52,8 @@ def update(M):
     z = 2*np.sqrt(Rs*(r-Rs))
     r2 = np.linspace(Rs, 100, 200)
     phi2 = np.linspace(0, 2*np.pi, 200)
-    x2 = r*np.cos(phi2)
-    y2 = r*np.sin(phi2)
+    x2 = r2*np.cos(phi2)
+    y2 = r2*np.sin(phi2)
     z2 = 2*np.sqrt(Rs*(r2-Rs))
     ax.plot(x2,y2,z2)
     #axes limits
