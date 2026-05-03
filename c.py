@@ -50,6 +50,7 @@ def update(M):
     x = r*np.cos(phi)
     y = r*np.sin(phi)
     z = 2*np.sqrt(Rs*(r-Rs))
+    ax.plot(x,y,z)
     #axes limits
     ax.set_xlim(-100, 100)
     ax.set_ylim(-100, 100)
