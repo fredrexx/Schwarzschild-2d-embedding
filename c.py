@@ -4,9 +4,9 @@ import numpy as np
 
 
 #costanti
-G = 6.67*10**-11
-M0 = 2*10**30
-c = 300000000
+G = 1
+M0 = 1
+c = 1
 
 
 st.set_page_config(layout="centered")
@@ -16,7 +16,7 @@ st.title("Schwarszchild spacetime 2d embedding")
 M = st.slider(
     "Mass (fixed)",
     min_value=float(M0),
-    max_value=2*10**40,
+    max_value=20,
     value=float(M0),
 )
 
