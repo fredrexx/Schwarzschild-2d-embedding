@@ -61,7 +61,7 @@ def update(M):
     theta, phi =np.meshgrid(theta,phi)
     x2 = Rs *np.sin(theta)*np.cos(phi)
     y2 = Rs *np.sin(theta)*np.cos(theta)
-    z2 = Rs*np.cos(theta)
+    z2 = Rs*np.cos(theta) + z
     ax.plot_surface(x2,y2,z2)
     if show_er:
         ax.plot_surface(x, y, z, cmap="inferno")
