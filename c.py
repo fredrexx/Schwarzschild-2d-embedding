@@ -1,7 +1,7 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
-
+from matplotlib.animation import FuncAnimation
 
 #costanti
 G = 1
