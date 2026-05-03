@@ -21,7 +21,7 @@ M = st.slider(
 )
 
 show_er = st.checkbox("Show Einstein-Rosen")
-
+viewer = st.checkbox("Front view")
 fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
 
 def update(M):
@@ -54,7 +54,9 @@ def update(M):
     ax.set_xlim(-100, 100)
     ax.set_ylim(-100, 100)
     ax.set_zlim(0, 80)
-
+    if not viewer:
+        ax.view_init(60,45)
+        
     if show_er:
         ax.plot_surface(x, y, z, cmap="inferno")
         ax.plot_surface(x, y, -z, cmap="inferno")
